@@ -10,7 +10,9 @@ body {
 .song-container {
   width: 300px;
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  border: 1px solid darkmagenta;
+  padding: 15px 20px; }
   .song-container h2 {
     color: darkcyan;
     margin-bottom: 0; }
