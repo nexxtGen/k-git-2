@@ -9,6 +9,8 @@ body {
 }
 .song-container {
     width: 300px;
+    border: 2px solid black;
+    padding: 15px 20px;
     display: flex;
     flex-direction: column;
     h2 {
