@@ -1,0 +1,7 @@
+Uruchomienie autoprefixer-cli w bie¿¹cym projekcie
+
+node_modules/.bin/autoprefixer-cli -o css/style.prefixed.css css/style.css
+
+
+Uruchomienie nu-html-checker
+node_modules/.bin/nu-html-checker *.html
