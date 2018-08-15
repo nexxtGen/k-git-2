@@ -4,7 +4,24 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm-run-all test:html",
+    "test:html": "glob-run nu-html-checker *.html",
+
+    "init-project": "glob-run npm install && npm-run-all init:*",
+    "init:dirs": "mkdirp sass css vendor images js",
+    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
+
+    "build": "glob-run npm-run-all build:* test",
+    "build:sass": "node-sass --output-style compact -o css sass",
+    "build:autoprefixer": "glob-run autoprefixer-cli -o css/style.prefixed.css css/style.css",
+
+    "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
+
+    "watch": "npm-run-all build -p watch:*",
+    "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
+    "watch:sass": "node-sass --output-style expanded --source-map true -o css sass --watch",
+    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.prefixed.css css/style.css"
   },
   "repository": {
     "type": "git",
@@ -21,10 +38,17 @@
     "autoprefixer": "^9.0.2",
     "autoprefixer-cli": "^1.0.0",
     "browser-sync": "^2.24.6",
+    "globstar": "^1.0.0",
+    "mkdirp": "^0.5.1",
+    "node-sass": "^4.9.3",
+    "npm-run-all": "^4.1.3",
     "nu-html-checker": "^0.1.0",
-    "postcss-cli": "^6.0.0"
+    "onchange": "^4.1.0",
+    "postcss-cli": "^6.0.0",
+    "sass": "^1.11.0"
   },
   "dependencies": {
+    "glob-run": "^0.1.6",
     "postcss-cli-simple": "^1.0.4"
   }
 }
