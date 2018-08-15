@@ -1,5 +1,5 @@
 body {
-    background: lightgrey;
+    background: lightblue;
 }
 .container {
     max-width: 1200px;
@@ -21,13 +21,17 @@ body {
         color: darkgrey;
     }
     p {
-        font-size: 16px;
+        font-size: 18px;
     }       
 }
 .center-flex {   
     display: flex; 
     width: 100%;    
     justify-content: center;
+}
+
+p {
+    font-size: 14px;
 }
 
 
