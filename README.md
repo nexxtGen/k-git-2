@@ -1,2 +1,2 @@
-https://nexxtgen.github.io/kodilla-git-2/
-# kodilla-git-2
+https://nexxtgen.github.io/k-git-2/
+# k-git-2
